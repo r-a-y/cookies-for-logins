@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Cookies for Logins and BuddyPress
-Description: Sets a cookie that must exist to login or to register in BuddyPress. Requires the Cookies for Comments plugin.
+Description: Sets a cookie that must exist in order to login or to register in BuddyPress. Requires the Cookies for Comments plugin.
 Version: 0.1
 Author: r-a-y
 Author URI: http://profiles.wordpress.org/r-a-y
@@ -98,7 +98,7 @@ function ray_cfb_init() {
 	}
 
 	if ( $spam == 1 ) {
-		$msg = '<p>' . __( 'Sorry! We cannot you to register on this site!', 'ray_cfx' ) . '</p>';
+		$msg = '<p>' . __( 'Sorry! We cannot allow you to register on the site!', 'ray_cfx' ) . '</p>';
 		wp_die( $msg );
 	}
 }
