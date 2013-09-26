@@ -13,7 +13,7 @@ How to use?
 
 Advanced usage
 -
-Block login attempts via .htacess with these rules:
+Blocka attempts via .htacess with these rules:
 
 *Change XXXXX to the cookie string as listed on the Cookies for Comments admin page.
 
@@ -23,6 +23,12 @@ Block login attempts via .htacess with these rules:
     RewriteCond %{HTTP_COOKIE} !^.*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.*$
     RewriteRule ^wp-login.php - [F,L]
 
+    # BuddyPress registration page
+    # Comment out the POST line if you want to block direct access to the registration page
+    # Also if your registration slug is different than the default "register", change it!
+    RewriteCond %{REQUEST_METHOD} POST
+    RewriteCond %{HTTP_COOKIE} !^.*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.*$
+    RewriteRule ^register - [F,L]
 
 Caveats
 -
