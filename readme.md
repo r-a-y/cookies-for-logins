@@ -13,7 +13,7 @@ How to use?
 
 Advanced usage
 -
-Blocka attempts via .htacess with these rules:
+Block attempts via .htacess with these rules:
 
 *Change XXXXX to the cookie string as listed on the Cookies for Comments admin page.
 
