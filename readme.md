@@ -11,6 +11,19 @@ How to use?
 * Download, install and activate this plugin.
 * That's it!
 
+Advanced usage
+-
+Block login attempts via .htacess with these rules:
+
+*Change XXXXX to the cookie string as listed on the Cookies for Comments admin page.
+
+    # Login page
+    # Blocking only occurs during POST submission and if our cookie does not exist
+    RewriteCond %{REQUEST_METHOD} POST
+    RewriteCond %{HTTP_COOKIE} !^.*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.*$
+    RewriteRule ^wp-login.php - [F,L]
+
+
 Caveats
 -
 * Requires cookies to be enabled by the users on your site.
