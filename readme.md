@@ -21,7 +21,7 @@ Block attempts via .htacess with these rules:
     # Blocking only occurs during POST submission and if our cookie does not exist
     RewriteCond %{REQUEST_METHOD} POST
     RewriteCond %{HTTP_COOKIE} !^.*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.*$
-    RewriteRule ^wp-login.php - [F,L]
+    RewriteRule ^wp\-login\.php - [F,L]
 
     # BuddyPress registration page
     # Comment out the POST line if you want to block direct access to the registration page
