@@ -32,16 +32,3 @@ function ray_cfb_init() {
 	require_once __DIR__ . '/hooks/buddypress.php';
 }
 add_action( 'bp_signup_validate', 'ray_cfb_init' );
-
-/**
- * Try to set the Cookies for Comments image in the middle of the document.
- */
-add_action( 'get_header', function() {
-	// Cookies for comments plugin doesn't exist, so stop!
-	if ( ! function_exists( 'get_cfc_key' ) ) {
-		return;
-	}
-
-	require_once __DIR__ . '/class.ray-cfc-img.php';
-	new Ray_CFC_Img();
-} );
